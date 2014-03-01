@@ -7,9 +7,9 @@ describe("Hand", function(){
 			var samplehand = "Ah As 10c 7d 6s";
 			var results = hand.parse(samplehand);
 
-			var expected = ["Ah", "As", "10c", "7d", "6s"];
+			var expected = ["Ah","As","10c","7d","6s"];
 
-			expect(results).to.equal(expected);
+			expect(results).to.deep.equal(expected);
 		});
 	});
 });
