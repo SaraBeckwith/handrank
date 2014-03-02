@@ -90,6 +90,12 @@ describe("Hand", function(){
 			expect(hand.getRank(flush)).to.equal("Flush");
 		});
 
+		it("Should return 'straight' when presented with a simple straight", function(){
+			var straight = "Ah Kd Qc Jd 10h";
+
+			expect(hand.getRank(straight)).to.equal("Straight");
+		});
+
 	});
 
 
