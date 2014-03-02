@@ -102,6 +102,12 @@ describe("Hand", function(){
 			expect(hand.getRank(fullHouse)).to.equal("Full House");
 		});
 
+		it("Should return 'Three of a Kind' when presented with 3 of a kind, and two different cards", function(){
+			var threeOfAKind = "Ah Ac As 10d 5s";
+
+			expect(hand.getRank(threeOfAKind)).to.equal("Three of a Kind");
+		});
+
 	});
 
 
