@@ -13,3 +13,4 @@ Handrank expects a string of 5 groups of space-delineated characters representin
 It specifically does not:
 
 * Rank hands against each other
+* Verify that multiple hands can exist in a game (yea, verily, it only accepts a single hand)
