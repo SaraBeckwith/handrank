@@ -96,6 +96,12 @@ describe("Hand", function(){
 			expect(hand.getRank(straight)).to.equal("Straight");
 		});
 
+		it("Should return 'Full House' when presented with 3 of a kind and a pair in a hand", function(){
+			var fullHouse = "Ah Ac As 10d 10s";
+
+			expect(hand.getRank(fullHouse)).to.equal("Full House");
+		});
+
 	});
 
 
