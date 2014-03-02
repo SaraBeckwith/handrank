@@ -13,8 +13,10 @@ describe("Hand", function(){
 		});
 
 		//todo: test that it does some minimal input checking
+		//      5 cards
 		//      Each card has rank and suit
 		// 	 	suit is only s,h,d,c (lower)
+		//		face cards only A, K, Q, J (upper)
 
 
 		//todo: have it organize hand by rank order
@@ -28,6 +30,21 @@ describe("Hand", function(){
 
 			expect(hand.isFlush(sampleNonFlush)).to.be.false;
 			expect(hand.isFlush(sampleFlush)).to.be.true;
+		});
+	});
+
+	describe("#isStraight()", function(){
+		it("should return true when rank of cards step down by 1 in order", function(){
+			var sampleNonStraight = ["Ah", "As", "10c", "7d", "6s"];
+			var sampleStraightFaces = ["Ah", "Kh", "Qh", "Jh", "10h"];
+			var sampleStraightAceLow = ["Ad", "5h", "4c", "3s", "2h"];
+			var sampleStraight = ["9h", "8d", "7c", "6h", "5c"];
+
+			expect(hand.isStraight(sampleNonStraight)).to.be.false;
+			expect(hand.isStraight(sampleStraightFaces)).to.be.true;
+			expect(hand.isStraight(sampleStraightAceLow)).to.be.true;
+			expect(hand.isStraight(sampleStraight)).to.be.true;
+
 		});
 	});
 });
