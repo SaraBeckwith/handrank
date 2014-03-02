@@ -71,5 +71,14 @@ describe("Hand", function(){
 		});
 	});
 
+	describe("#getRank()", function(){
+		it("should return 'Royal Flush' when presented with a royal flush hand", function(){
+			var royalFlush = "Ah Kh Qh Jh 10h";
+
+			expect(hand.getRank(royalFlush)).to.equal("Royal Flush");
+		});
+
+	});
+
 
 });
