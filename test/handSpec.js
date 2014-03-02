@@ -78,6 +78,18 @@ describe("Hand", function(){
 			expect(hand.getRank(royalFlush)).to.equal("Royal Flush");
 		});
 
+		it("Should return 'Straight Flush' when presented with straight flush hand", function(){
+			var straightFlush = "9h 8h 7h 6h 5h";
+
+			expect(hand.getRank(straightFlush)).to.equal("Straight Flush");
+		});
+
+		it("Should return 'Flush' when presented with a simple flush", function(){
+			var flush = "Ah 10h 8h 5h 2h";
+
+			expect(hand.getRank(flush)).to.equal("Flush");
+		});
+
 	});
 
 
