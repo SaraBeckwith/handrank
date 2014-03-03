@@ -82,6 +82,9 @@ describe("Hand", function(){
 			var straightFlush = "9h 8h 7h 6h 5h";
 
 			expect(hand.getRank(straightFlush)).to.equal("Straight Flush");
+
+			var straightFlushAceLow = "Ah 5h 4h 3h 2h";
+			expect(hand.getRank(straightFlushAceLow)).to.equal("Straight Flush");
 		});
 
 		it("Should return 'Flush' when presented with a simple flush", function(){
@@ -106,6 +109,25 @@ describe("Hand", function(){
 			var threeOfAKind = "Ah Ac As 10d 5s";
 
 			expect(hand.getRank(threeOfAKind)).to.equal("Three of a Kind");
+		});
+
+		it("Should return 'Two Pair' when presented with a hand containing two pairs", function(){
+			var twoPair = "Ah Ac 10d 10s 8c";
+
+			expect(hand.getRank(twoPair)).to.equal("Two Pair");
+		});
+
+		it("Should return 'Pair of ___' when presented with a hand containing only one pair", function(){
+			var pairAce = "Ah Ac 9d 7c 5s";
+			expect(hand.getRank(pairAce)).to.equal("Pair of Aces");
+
+
+		});
+
+		it("Should return the high card when presented with a hand that otherwise doesn't have a rank", function(){
+			var highCard = "Ah 8c 5d 4s 2c";
+
+			expect(hand.getRank(highCard)).to.equal("Ace High");
 		});
 
 	});
