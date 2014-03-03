@@ -1,9 +1,10 @@
-handrank
+#handrank
 
 Handrank is a simple node.js app with unit tests in mocha/chai. 
 
 To set up: After installing node, you will need to install Mocha globally via the following command:
 `npm install -g mocha`
+You will also need to do a `npm install` inside the directory to bring down the chai assertion library
 
 You can run it by executing the command:
 `node index.js "Ah As 10c 7d 6s"`
